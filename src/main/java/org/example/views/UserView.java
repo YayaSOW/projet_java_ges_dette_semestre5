@@ -1,9 +1,12 @@
 package org.example.views;
 
+import org.example.core.views.impl.ViewImpl;
 import org.example.data.entities.User;
 import org.example.data.enums.Etat;
 
-public class UserView extends View{
+public class UserView extends ViewImpl<User>{
+
+    @Override
     public User saisi(){
         User user = new User();
         System.out.println("Enter the user's mail: ");

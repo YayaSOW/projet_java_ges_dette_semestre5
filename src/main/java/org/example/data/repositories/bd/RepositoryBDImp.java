@@ -1,8 +1,8 @@
 package org.example.data.repositories.bd;
 
-import org.example.core.Repository;
-
 import java.util.List;
+
+import org.example.core.repositories.Repository;
 
 public class RepositoryBDImp<T> implements Repository<T> {
     @Override

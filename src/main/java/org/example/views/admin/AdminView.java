@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.example.core.ClientService;
 import org.example.data.entities.Article;
 import org.example.data.entities.Client;
 import org.example.data.entities.Dette;
 import org.example.data.entities.User;
 import org.example.data.enums.Etat;
 import org.example.data.enums.Statut;
-import org.example.services.ArticleServiceImp;
-import org.example.services.DetteServiceImp;
-import org.example.services.UserServiceImp;
+import org.example.services.ClientService;
+import org.example.services.impl.ArticleServiceImp;
+import org.example.services.impl.DetteServiceImp;
+import org.example.services.impl.UserServiceImp;
 import org.example.views.ArticleView;
 import org.example.views.ClientView;
 import org.example.views.DetteView;
@@ -54,7 +54,7 @@ public class AdminView {
                     clientServiceImp.create(clientView.saisi());
                 }
                 case 2 -> {
-                    clientView.affiche(clientServiceImp.findAll());
+                    clientView.afficher(clientServiceImp.findAll());
                 }
                 case 3 -> {
                     scanner.nextLine();
@@ -80,7 +80,7 @@ public class AdminView {
                             System.out.println("Vous ne pouvez pas creer de compte !!!");
                         } else {
                             scanner.nextLine();
-                            clientView.affiche(clients);
+                            clientView.afficher(clients);
                             System.out.println("Enter the client's Phone :");
                             String phone = scanner.nextLine();
                             Client client = clientServiceImp.search(phone);
@@ -161,7 +161,7 @@ public class AdminView {
                     articleView.afficheDispo(articleServiceImp.findAll());
                 }
                 case 11 -> {
-                    articleView.afficheDispo(articleServiceImp.findAll());
+                    articleView.afficher(articleServiceImp.findAll());
                     scanner.nextLine();
                     System.out.println("Enter the Libelle :");
                     String libelle = scanner.nextLine();
@@ -181,7 +181,7 @@ public class AdminView {
                     } else {
                         scanner.nextLine();
                         Dette dette = detteView.saisi();
-                        clientView.affiche(clientServiceImp.findAll());
+                        clientView.afficher(clientServiceImp.findAll());
                         scanner.nextLine();
                         System.out.println("Veuillez saisir le telephone du client :");
                         String phone = scanner.nextLine();

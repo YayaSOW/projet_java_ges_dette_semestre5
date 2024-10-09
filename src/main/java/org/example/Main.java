@@ -1,12 +1,12 @@
 package org.example;
 
-import org.example.core.ClientRepository;
-import org.example.core.ClientService;
-import org.example.data.repositories.list.ClientRepositoryList;
-import org.example.services.ArticleServiceImp;
-import org.example.services.ClientServiceImp;
-import org.example.services.DetteServiceImp;
-import org.example.services.UserServiceImp;
+import org.example.data.repositories.list.ClientRepository;
+import org.example.data.repositories.list.impl.ClientRepositoryList;
+import org.example.services.ClientService;
+import org.example.services.impl.ArticleServiceImp;
+import org.example.services.impl.ClientServiceImp;
+import org.example.services.impl.DetteServiceImp;
+import org.example.services.impl.UserServiceImp;
 import org.example.views.ArticleView;
 import org.example.views.ClientView;
 import org.example.views.DetteView;

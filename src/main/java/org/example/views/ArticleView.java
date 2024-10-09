@@ -1,10 +1,13 @@
 package org.example.views;
 
+import org.example.core.views.impl.ViewImpl;
 import org.example.data.entities.Article;
 
 import java.util.List;
 
-public class ArticleView extends View{
+public class ArticleView extends ViewImpl<Article>{
+
+    @Override
     public Article saisi(){
         Article article = new Article();
         System.out.println("Enter the libelle");
@@ -16,9 +19,9 @@ public class ArticleView extends View{
         return article;
     }
 
-    public void afficher(List <Article> articles){
-        articles.forEach(System.out::println);
-    }
+    // public void afficher(List <Article> articles){
+    //     articles.forEach(System.out::println);
+    // }
 
     public void afficheDispo(List <Article> articles){
         articles.stream().

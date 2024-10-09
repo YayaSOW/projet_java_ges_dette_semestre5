@@ -1,9 +1,12 @@
 package org.example.views;
 
+import org.example.core.views.impl.ViewImpl;
 import org.example.data.entities.Dette;
 import org.example.data.enums.Statut;
 
-public class DetteView extends View{
+public class DetteView extends ViewImpl<Dette>{
+
+    @Override
     public Dette saisi(){
         Dette dette = new Dette();
         System.out.println("Enter the date [DD/MM/YY]: ]");

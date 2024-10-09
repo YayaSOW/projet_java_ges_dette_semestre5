@@ -1,10 +1,13 @@
 package org.example.views;
 
+import org.example.core.views.impl.ViewImpl;
 import org.example.data.entities.Client;
 
 import java.util.List;
 
-public class ClientView extends View{
+public class ClientView extends ViewImpl<Client>{
+
+    @Override
     public Client saisi(){
         Client client = new Client();
         System.out.println("Enter the surname:");
@@ -16,11 +19,11 @@ public class ClientView extends View{
         return client;
     }
 
-//    public void affiche(List<Client> clients){
+//    public void afficher(List<Client> clients){
 //        clients.stream().forEach(client ->System.out.println(client));
 //    }
-    public void affiche(List<Client> clients){
-        clients.forEach(System.out::println);
-    }
+    // public void afficher(List<Client> clients){
+    //     clients.forEach(System.out::println);
+    // }
 
 }
