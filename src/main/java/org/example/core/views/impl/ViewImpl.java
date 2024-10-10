@@ -10,6 +10,7 @@ import org.example.core.views.View;
 public abstract class ViewImpl<T> implements View<T> {
     protected Scanner scanner;
 
+    @Override
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
     }

@@ -1,13 +1,17 @@
 package org.example.services.impl;
 
 import org.example.data.entities.Dette;
-import org.example.data.repositories.list.impl.DetteRepositoryList;
+import org.example.data.repositories.list.DetteRepository;
 import org.example.services.DetteService;
 
 import java.util.List;
 
 public class DetteServiceImp implements DetteService {
-    private DetteRepositoryList detteRepositoryList = new DetteRepositoryList();
+    private DetteRepository detteRepositoryList;
+
+    public DetteServiceImp(DetteRepository detteRepositoryList) {
+        this.detteRepositoryList = detteRepositoryList;
+    }
 
     @Override
     public void create(Dette dette) {
