@@ -10,7 +10,10 @@ import org.example.data.entities.Dette;
 import org.example.data.entities.User;
 import org.example.data.enums.Etat;
 import org.example.data.enums.Statut;
+import org.example.services.ArticleService;
 import org.example.services.ClientService;
+import org.example.services.DetteService;
+import org.example.services.UserService;
 import org.example.services.impl.ArticleServiceImp;
 import org.example.services.impl.DetteServiceImp;
 import org.example.services.impl.UserServiceImp;
@@ -25,14 +28,14 @@ public class AdminView {
     private final UserView userView;
     private final ArticleView articleView;
     private final DetteView detteView;
-    private final UserServiceImp userServiceImp;
-    private final ArticleServiceImp articleServiceImp;
-    private final DetteServiceImp detteServiceImp;
+    private final UserService userServiceImp;
+    private final ArticleService articleServiceImp;
+    private final DetteService detteServiceImp;
     private final Scanner scanner;
 
     public AdminView(ClientService clientServiceImp, ClientView clientView, UserView userView, ArticleView articleView,
-            DetteView detteView, UserServiceImp userServiceImp,
-            ArticleServiceImp articleServiceImp, DetteServiceImp detteServiceImp, Scanner scanner) {
+            DetteView detteView, UserService userServiceImp,
+            ArticleService articleServiceImp, DetteService detteServiceImp, Scanner scanner) {
         this.scanner = scanner;
         this.clientServiceImp = clientServiceImp;
         this.clientView = clientView;

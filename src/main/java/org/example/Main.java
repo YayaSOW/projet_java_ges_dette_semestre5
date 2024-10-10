@@ -1,12 +1,10 @@
 package org.example;
 
-import org.example.core.factory.RepositoryFactory;
-import org.example.core.factory.impl.RepositoryFactoryImpl;
 import org.example.core.factory.impl.ServiceFactoryImpl;
 import org.example.services.ClientService;
-import org.example.services.impl.ArticleServiceImp;
-import org.example.services.impl.DetteServiceImp;
-import org.example.services.impl.UserServiceImp;
+import org.example.services.UserService;
+import org.example.services.ArticleService;
+import org.example.services.DetteService;
 import org.example.views.ArticleView;
 import org.example.views.ClientView;
 import org.example.views.DetteView;
@@ -24,13 +22,12 @@ public class Main {
         ArticleView articleView = new ArticleView();
         DetteView detteView = new DetteView();
         //Factory
-        RepositoryFactory repositoryFactoryImpl = new RepositoryFactoryImpl();
         ServiceFactoryImpl serviceFactoryImpl = new ServiceFactoryImpl();
         
         ClientService clientServiceImp = serviceFactoryImpl.getInstanceClientService();
-        UserServiceImp userServiceImp = new UserServiceImp(repositoryFactoryImpl.getInstanceUserRepository());
-        ArticleServiceImp articleServiceImp = new ArticleServiceImp(repositoryFactoryImpl.getInstanceArticleRepository());
-        DetteServiceImp detteServiceImp = new DetteServiceImp(repositoryFactoryImpl.getInstanceDetteRepository());
+        UserService userServiceImp = serviceFactoryImpl.getInstanceUserService();
+        ArticleService articleServiceImp = serviceFactoryImpl.getInstanceArticleService();
+        DetteService detteServiceImp = serviceFactoryImpl.getInstanceDetteService();
         //
         clientView.setScanner(scanner);
         userView.setScanner(scanner);
