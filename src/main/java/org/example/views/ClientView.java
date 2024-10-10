@@ -18,12 +18,4 @@ public class ClientView extends ViewImpl<Client>{
         client.setAddress(scanner.nextLine());
         return client;
     }
-
-//    public void afficher(List<Client> clients){
-//        clients.stream().forEach(client ->System.out.println(client));
-//    }
-    // public void afficher(List<Client> clients){
-    //     clients.forEach(System.out::println);
-    // }
-
 }

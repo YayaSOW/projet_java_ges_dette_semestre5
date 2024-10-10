@@ -19,10 +19,6 @@ public class ArticleView extends ViewImpl<Article>{
         return article;
     }
 
-    // public void afficher(List <Article> articles){
-    //     articles.forEach(System.out::println);
-    // }
-
     public void afficheDispo(List <Article> articles){
         articles.stream().
                 filter(article -> article.getQteStock()!=0).forEach(System.out::println);
