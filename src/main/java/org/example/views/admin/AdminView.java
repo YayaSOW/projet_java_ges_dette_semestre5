@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.example.core.views.View;
+import org.example.core.views.impl.ArticleViewImpl;
 import org.example.data.entities.Article;
 import org.example.data.entities.Client;
 import org.example.data.entities.Dette;
@@ -14,24 +16,20 @@ import org.example.services.ArticleService;
 import org.example.services.ClientService;
 import org.example.services.DetteService;
 import org.example.services.UserService;
-import org.example.views.ArticleView;
-import org.example.views.ClientView;
-import org.example.views.DetteView;
-import org.example.views.UserView;
 
 public class AdminView {
     private final ClientService clientServiceImp;
-    private final ClientView clientView;
-    private final UserView userView;
-    private final ArticleView articleView;
-    private final DetteView detteView;
+    private final View<Client> clientView;
+    private final View<User> userView;
+    private final ArticleViewImpl articleView;
+    private final View<Dette> detteView;
     private final UserService userServiceImp;
     private final ArticleService articleServiceImp;
     private final DetteService detteServiceImp;
     private final Scanner scanner;
 
-    public AdminView(ClientService clientServiceImp, ClientView clientView, UserView userView, ArticleView articleView,
-            DetteView detteView, UserService userServiceImp,
+    public AdminView(ClientService clientServiceImp, View<Client> clientView, View<User> userView,
+    ArticleViewImpl articleView, View<Dette> detteView, UserService userServiceImp,
             ArticleService articleServiceImp, DetteService detteServiceImp, Scanner scanner) {
         this.scanner = scanner;
         this.clientServiceImp = clientServiceImp;

@@ -1,11 +1,12 @@
 package org.example.views;
 
+import org.example.core.views.impl.ArticleViewImpl;
 import org.example.core.views.impl.ViewImpl;
 import org.example.data.entities.Article;
 
 import java.util.List;
 
-public class ArticleView extends ViewImpl<Article>{
+public class ArticleView extends ViewImpl<Article> implements ArticleViewImpl{
 
     @Override
     public Article saisi(){
@@ -19,6 +20,8 @@ public class ArticleView extends ViewImpl<Article>{
         return article;
     }
 
+
+    @Override
     public void afficheDispo(List <Article> articles){
         articles.stream().
                 filter(article -> article.getQteStock()!=0).forEach(System.out::println);

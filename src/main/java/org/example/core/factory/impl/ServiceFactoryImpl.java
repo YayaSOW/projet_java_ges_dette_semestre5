@@ -1,7 +1,7 @@
 package org.example.core.factory.impl;
 
 import org.example.core.factory.RepositoryFactory;
-import org.example.core.factory.ServiceRepository;
+import org.example.core.factory.ServiceFactory;
 import org.example.services.ArticleService;
 import org.example.services.ClientService;
 import org.example.services.DetteService;
@@ -11,7 +11,7 @@ import org.example.services.impl.ClientServiceImp;
 import org.example.services.impl.DetteServiceImp;
 import org.example.services.impl.UserServiceImp;
 
-public class ServiceFactoryImpl implements ServiceRepository {
+public class ServiceFactoryImpl implements ServiceFactory {
     private ClientService clientService;
     private UserService userService;
     private ArticleService articleService;

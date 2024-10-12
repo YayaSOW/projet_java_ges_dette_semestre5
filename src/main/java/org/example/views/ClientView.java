@@ -1,11 +1,11 @@
 package org.example.views;
 
+import org.example.core.views.View;
 import org.example.core.views.impl.ViewImpl;
 import org.example.data.entities.Client;
 
-import java.util.List;
 
-public class ClientView extends ViewImpl<Client>{
+public class ClientView extends ViewImpl<Client> implements View<Client>{
 
     @Override
     public Client saisi(){

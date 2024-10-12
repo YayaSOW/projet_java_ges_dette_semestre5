@@ -1,10 +1,11 @@
 package org.example.views;
 
+import org.example.core.views.View;
 import org.example.core.views.impl.ViewImpl;
 import org.example.data.entities.Dette;
 import org.example.data.enums.Statut;
 
-public class DetteView extends ViewImpl<Dette>{
+public class DetteView extends ViewImpl<Dette> implements View<Dette>{
 
     @Override
     public Dette saisi(){

@@ -1,14 +1,18 @@
 package org.example;
 
 import org.example.core.factory.impl.ServiceFactoryImpl;
+import org.example.core.factory.impl.ViewFactoryImpl;
+import org.example.core.views.View;
+import org.example.core.views.impl.ArticleViewImpl;
+import org.example.core.factory.ServiceFactory;
+import org.example.core.factory.ViewFactory;
+import org.example.data.entities.Client;
+import org.example.data.entities.Dette;
+import org.example.data.entities.User;
 import org.example.services.ClientService;
 import org.example.services.UserService;
 import org.example.services.ArticleService;
 import org.example.services.DetteService;
-import org.example.views.ArticleView;
-import org.example.views.ClientView;
-import org.example.views.DetteView;
-import org.example.views.UserView;
 import org.example.views.admin.AdminView;
 
 import java.util.Scanner;
@@ -17,13 +21,16 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        ClientView clientView = new ClientView();
-        UserView userView = new UserView();
-        ArticleView articleView = new ArticleView();
-        DetteView detteView = new DetteView();
+
         //Factory
-        ServiceFactoryImpl serviceFactoryImpl = new ServiceFactoryImpl();
-        
+        ViewFactory viewFactory = new ViewFactoryImpl();
+        ServiceFactory serviceFactoryImpl = new ServiceFactoryImpl();
+            //View
+        View<Client> clientView = viewFactory.getInstanceClientView();
+        View<User> userView = viewFactory.getInstanceUserView();
+        ArticleViewImpl articleView = viewFactory.getInstanceArticleView();
+        View<Dette> detteView = viewFactory.getInstanceDetteView();
+            //Service && Repository
         ClientService clientServiceImp = serviceFactoryImpl.getInstanceClientService();
         UserService userServiceImp = serviceFactoryImpl.getInstanceUserService();
         ArticleService articleServiceImp = serviceFactoryImpl.getInstanceArticleService();

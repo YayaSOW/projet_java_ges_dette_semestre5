@@ -24,8 +24,4 @@ public abstract class ViewImpl<T> implements View<T> {
     public void afficher(List<T> data) {
         data.forEach(System.out::println);
     }
-
-    // public void afficher(List <Article> articles){
-    // articles.forEach(System.out::println);
-    // }
 }

@@ -1,10 +1,11 @@
 package org.example.views;
 
+import org.example.core.views.View;
 import org.example.core.views.impl.ViewImpl;
 import org.example.data.entities.User;
 import org.example.data.enums.Etat;
 
-public class UserView extends ViewImpl<User>{
+public class UserView extends ViewImpl<User> implements View<User>{
 
     @Override
     public User saisi(){
