@@ -3,3 +3,9 @@ persitence:
   units:
       mysql: "mysqlUnit"
       postgre: "postgresUnit"
+database:
+  active_database: "list"
+  units:
+    bd: "BD"
+    list: "LIST"
+    jpa: "JPA"
