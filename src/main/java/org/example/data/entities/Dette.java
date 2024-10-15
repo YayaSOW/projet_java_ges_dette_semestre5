@@ -21,6 +21,8 @@ public class Dette {
     private List<Detail> details = new ArrayList<>();
     //ManyToOne (Dette => Statut)
     private Statut statut;
+    //OneToMany(Dette => Paiement)
+    private List<Paiement> paiements = new ArrayList<>();
 
     public Dette() {
         id = ++nbrDette;
@@ -89,6 +91,15 @@ public class Dette {
     public void add(Detail detail) {
         this.details.add(detail);
     }
+
+    public List<Paiement> getPaiements() {
+        return paiements;
+    }
+
+    public void add(Paiement paiement) {
+        this.paiements.add(paiement);
+    }
+
 
     @Override
     public String toString() {

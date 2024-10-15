@@ -14,6 +14,7 @@ import org.example.services.UserService;
 import org.example.services.ArticleService;
 import org.example.services.DetteService;
 import org.example.views.admin.AdminView;
+import org.example.views.boutiquier.BoutiquierView;
 
 import java.util.Scanner;
 
@@ -43,12 +44,14 @@ public class Main {
         // Création des vues
         AdminView adminView = new AdminView(clientServiceImp, clientView, userView, articleView, detteView,
                 userServiceImp, articleServiceImp, detteServiceImp, scanner);
+        BoutiquierView boutiquierView = new BoutiquierView(clientServiceImp, clientView, userView, articleView, detteView,
+                userServiceImp, articleServiceImp, detteServiceImp, scanner);
         int rule;
         do {
             rule = menuRole();
             switch (rule) {
                 case 1 -> {
-                    System.out.println("Boutiquier");
+                    boutiquierView.boutiquierRole();
                 }
                 case 2 -> {
                     adminView.adminRole();
